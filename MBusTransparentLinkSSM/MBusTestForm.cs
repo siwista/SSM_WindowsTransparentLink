@@ -29,8 +29,11 @@ namespace MBusTransparentLinkSSM
         }
         MBusSSMClass SSM_Class = new MBusSSMClass();
 
+        MBusSSMClass SSM_Slave_Class = new MBusSSMClass();
+
         private void OpenSerialPort_Click(object sender, EventArgs e)
         {
+            //MAIN INSTANCE  - START
             SerialPort SP = new SerialPort();
             SP.PortName = "COM7";
             SP.Parity = Parity.None;
@@ -46,7 +49,26 @@ namespace MBusTransparentLinkSSM
             
             SSM_Class.StartModBusSerialLisener();
             SSM_Class.Start_SSM_UDP_Server();
-            SSM_Class.TST_EmuSSM_UDP_ServerStart();
+
+            //MAIN INSTANCE  - END
+
+
+
+            //SLAVE INSTANCE  - START - ONLY FOR TESTS !!!!!
+            //COMMENT: Currently cannot be started more than one class instance because static variables has been used in the class. It will be changed !!!
+            /* SerialPort SP_Slave = new SerialPort();
+             SP_Slave.PortName = "COM8";
+             SP_Slave.Parity = Parity.None;
+             SP_Slave.BaudRate = 19200;
+             SP_Slave.StopBits = StopBits.One;
+             SSM_Slave_Class = new MBusSSMClass(SP_Slave, "127.0.0.1", 5001, "127.0.0.1", 5000);
+
+             SSM_Slave_Class.setSerialTerminalReference(seriaRD_SLV_OneEv);
+             SSM_Slave_Class.SetSSM_UDP_Terminal_Reference(udpRD_SLV_OneEv);
+
+             SSM_Slave_Class.StartModBusSerialLisener();
+             SSM_Slave_Class.Start_SSM_UDP_Server();*/
+            //SLAVE INSTANCE  - END
         }
 
         private void UdpRD_OneEv_TextChanged(object sender, EventArgs e)
@@ -80,6 +102,9 @@ namespace MBusTransparentLinkSSM
             SSM_Class.Start_SSM_UDP_Server();
         }
         
+        //BELLOW - Thread tests
+
+
 
         
 

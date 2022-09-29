@@ -39,6 +39,8 @@
             this.SSM_UdpLisenerStart = new System.Windows.Forms.Button();
             this.TST_ShowMemoryStram = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.seriaRD_SLV_OneEv = new System.Windows.Forms.TextBox();
+            this.udpRD_SLV_OneEv = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // TransparentLintStart
@@ -139,11 +141,27 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // seriaRD_SLV_OneEv
+            // 
+            this.seriaRD_SLV_OneEv.Location = new System.Drawing.Point(933, 108);
+            this.seriaRD_SLV_OneEv.Name = "seriaRD_SLV_OneEv";
+            this.seriaRD_SLV_OneEv.Size = new System.Drawing.Size(349, 22);
+            this.seriaRD_SLV_OneEv.TabIndex = 11;
+            // 
+            // udpRD_SLV_OneEv
+            // 
+            this.udpRD_SLV_OneEv.Location = new System.Drawing.Point(933, 163);
+            this.udpRD_SLV_OneEv.Name = "udpRD_SLV_OneEv";
+            this.udpRD_SLV_OneEv.Size = new System.Drawing.Size(349, 22);
+            this.udpRD_SLV_OneEv.TabIndex = 12;
+            // 
             // MBusTestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1445, 559);
+            this.Controls.Add(this.udpRD_SLV_OneEv);
+            this.Controls.Add(this.seriaRD_SLV_OneEv);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.TST_ShowMemoryStram);
             this.Controls.Add(this.SSM_UdpLisenerStart);
@@ -176,6 +194,8 @@
         private System.Windows.Forms.Button SSM_UdpLisenerStart;
         private System.Windows.Forms.Button TST_ShowMemoryStram;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox seriaRD_SLV_OneEv;
+        private System.Windows.Forms.TextBox udpRD_SLV_OneEv;
     }
 }
 
